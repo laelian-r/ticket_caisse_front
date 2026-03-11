@@ -1,0 +1,14 @@
+node_modules/
+
+.gitignore
+.prettierignore
+.prettierrc
+
+Dockerfile
+docker-compose.yml
+
+.dockerignore
+.env
+
+db.sqlite
+init.sql

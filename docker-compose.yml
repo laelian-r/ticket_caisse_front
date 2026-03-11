@@ -1,0 +1,10 @@
+services:
+  api-backend:
+    container_name: article_container
+    build: .
+    ports:
+      - "3001:3000"
+    environment:
+      - SQL_PAGE_SIZE=25
+    volumes:
+      - "./db.sqlite:/app/db.sqlite"

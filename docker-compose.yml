@@ -1,10 +1,11 @@
+version: "3.8" # l’avertissement n’empêche rien, mais vous pouvez le supprimer
+
 services:
-  api-backend:
-    container_name: article_container
+  front:
     build: .
+    image: ticket_caisse_front:latest
     ports:
       - "3001:3000"
     environment:
+      - NODE_ENV=production
       - SQL_PAGE_SIZE=25
-    volumes:
-      - "./db.sqlite:/app/db.sqlite"

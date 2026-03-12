@@ -5,7 +5,7 @@ const price = document.getElementById("price");
 const tbody = document.getElementById("tbody");
 const tfoot = document.getElementById("tfoot");
 
-const API_URL = import.meta.env.API_URL ?? "http://10.69.0.60:3000";
+const API_URL = import.meta.env.API_URL ?? "http://10.69.0.60:3002";
 
 document.addEventListener("DOMContentLoaded", async () => {
 	const response = await fetch(`${API_URL}/articles`);

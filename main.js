@@ -5,8 +5,15 @@ const price = document.getElementById("price");
 const tbody = document.getElementById("tbody");
 const tfoot = document.getElementById("tfoot");
 
-async function getArticles() {
-	const response = await fetch("http://localhost:3002/articles");
+const API_URL = import.meta.env.API_URL ?? "http://10.69.0.60:3000";
+
+document.addEventListener("DOMContentLoaded", async () => {
+	const response = await fetch(`${API_URL}/articles`);
+
+	if (!response.ok) {
+		return;
+	}
+
 	const articles = await response.json();
 
 	articles.forEach((e) => {
@@ -19,8 +26,9 @@ async function getArticles() {
 			</tr>
     	`;
 	});
-}
-getArticles();
+
+	console.log(data);
+});
 
 form.addEventListener("submit", async (e) => {
 	e.preventDefault();
